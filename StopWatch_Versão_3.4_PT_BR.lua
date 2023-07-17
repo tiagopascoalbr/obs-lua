@@ -1680,7 +1680,7 @@ function script_properties()
 	 t_type = {"Disabilitado", "Habilitado"}
   	for i,v in ipairs( t_type ) do obs.obs_property_list_add_int( p_19, v, i ) end
 	obs.obs_property_set_long_description( p_19, "\nExibir uma nota quando os estados de aviso e alerta for adicionado ao temporizador.\n" )
-	local p_20 = obs.obs_properties_add_list( props, "caution_note_source", "<i>Caution Note Source</i>", obs.OBS_COMBO_TYPE_LIST, obs.OBS_COMBO_FORMAT_STRING )
+	local p_20 = obs.obs_properties_add_list( props, "caution_note_source", "<i>Fonte da Nota de Alerta</i>", obs.OBS_COMBO_TYPE_LIST, obs.OBS_COMBO_FORMAT_STRING )
 	obs.obs_property_list_add_string( p_20, "Selecione", "selecione" )
 	list = {}
 	if sources ~= nil then
@@ -1707,7 +1707,7 @@ function script_properties()
 			obs.obs_property_list_add_string( p_20, value, value )
 		end
 	end
-	local p_21 = obs.obs_properties_add_list( props, "warning_note_source", "<i>Warning Note Source</i>", obs.OBS_COMBO_TYPE_LIST, obs.OBS_COMBO_FORMAT_STRING )
+	local p_21 = obs.obs_properties_add_list( props, "warning_note_source", "<i>Fonte da Nota de Aviso</i>", obs.OBS_COMBO_TYPE_LIST, obs.OBS_COMBO_FORMAT_STRING )
 	obs.obs_property_list_add_string( p_21, "Selecione", "selecione" )
 	list = {}
 	if sources ~= nil then
@@ -1733,10 +1733,10 @@ function script_properties()
 			obs.obs_property_list_add_string( p_21, value, value )
 		end
 	end	
-	local p_22 = obs.obs_properties_add_text( props, "caution_note", "<font color=".. font_dimmed ..">Caution Note</font>", obs.OBS_TEXT_DEFAULT )
-	obs.obs_property_set_long_description( p_22, "\nDisplay a note when the caution trigger.\n" )
-	local p_23 = obs.obs_properties_add_text( props, "warning_note", "<font color=".. font_dimmed ..">Warning Note</font>", obs.OBS_TEXT_DEFAULT )
-	obs.obs_property_set_long_description( p_23, "\nDisplay a note when the warning trigger.\n" )
+	local p_22 = obs.obs_properties_add_text( props, "caution_note", "<font color=".. font_dimmed ..">Fonte da Nota de Alerta</font>", obs.OBS_TEXT_DEFAULT )
+	obs.obs_property_set_long_description( p_22, "\nExibe uma nota quando o aviso for acionado.\n" )
+	local p_23 = obs.obs_properties_add_text( props, "warning_note", "<font color=".. font_dimmed ..">Nota de Aviso</font>", obs.OBS_TEXT_DEFAULT )
+	obs.obs_property_set_long_description( p_23, "\nExiba uma nota quando o aviso for acionado.\n" )
 	--*props, *name, *description, min, max, step
 	obs.obs_properties_add_int_slider( props, "caution_duration", "Duração do Alerta", 1, 100, 1 )
 	obs.obs_properties_add_int_slider( props, "warning_duration", "Duração do Aviso", 1, 100, 1 )
