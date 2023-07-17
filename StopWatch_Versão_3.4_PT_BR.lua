@@ -1795,7 +1795,7 @@ function script_properties()
 			obs.obs_property_list_add_string( p_30, value, value )
 		end
 	end
-	local p_31 = obs.obs_properties_add_editable_list(props, "cycle_list", "Cycle List",obs.OBS_EDITABLE_LIST_TYPE_STRINGS,nil,nil)
+	local p_31 = obs.obs_properties_add_editable_list(props, "cycle_list", "Lista de Ciclos",obs.OBS_EDITABLE_LIST_TYPE_STRINGS,nil,nil)
 	obs.obs_properties_add_button( props, "reset_button", "Reiniciar cronômetro", reset_button_clicked )
 	obs.obs_properties_add_button( props, "pause_button", "Iniciar/Pausar Cronômetro", pause_button_clicked )	
 	obs.obs_properties_add_button( props, "split_button", "Tempo Parcial", split_button_clicked )
